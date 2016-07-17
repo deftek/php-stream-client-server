@@ -20,8 +20,8 @@ echo "Waiting for server response...\n";
 $sockets[] = $mySocket;
 while (true) {
     $read          = $sockets;
-    $write         = [];
-    $except        = [];
+    $write         = array();
+    $except        = array();
     $modifiedCount = stream_select($read, $write, $except, 0, 200000);
     if (false === $modifiedCount) {
         die('Error running stream_select()');
